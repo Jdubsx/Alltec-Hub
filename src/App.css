@@ -2,11 +2,14 @@
 :root {
   --alltec-yellow: #FED03F;
   --alltec-blue: #0B3B60;
+  --glass-bg: rgba(255, 255, 255, 0.18);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --glass-shadow: 0 8px 32px 0 rgba(11, 59, 96, 0.18);
 }
 
 .App {
   text-align: center;
-  background: var(--alltec-blue);
+  background: linear-gradient(135deg, var(--alltec-blue) 60%, #1a2233 100%);
   min-height: 100vh;
 }
 
@@ -22,7 +25,7 @@
 }
 
 .App-header {
-  background: var(--alltec-blue);
+  background: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -57,6 +60,7 @@
   margin-bottom: 32px;
   color: var(--alltec-yellow);
   letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 .App-apps {
@@ -68,19 +72,49 @@
 }
 
 .App-card {
-  background: white;
+  background: var(--glass-bg);
   color: var(--alltec-blue);
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(11, 59, 96, 0.08);
+  border-radius: 18px;
+  box-shadow: var(--glass-shadow);
   padding: 32px 24px;
   min-width: 260px;
-  max-width: 320px;
+  max-width: 340px;
   text-align: left;
-  transition: box-shadow 0.2s;
+  border: 1.5px solid var(--glass-border);
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .App-card:hover {
-  box-shadow: 0 8px 32px rgba(11, 59, 96, 0.16);
+  box-shadow: 0 12px 40px 0 rgba(11, 59, 96, 0.28);
+  transform: translateY(-4px) scale(1.03);
+  background: rgba(255,255,255,0.28);
+}
+
+.glass {
+  /* For extra glassmorphism if needed */
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.App-card h2 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  color: var(--alltec-blue);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.App-card p {
+  color: #1a2233;
+  font-size: 1rem;
+  opacity: 0.85;
 }
 
 @media (max-width: 600px) {
