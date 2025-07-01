@@ -2,8 +2,8 @@
 :root {
   --alltec-yellow: #FED03F;
   --alltec-blue: #0B3B60;
-  --glass-bg: rgba(255, 255, 255, 0.18);
-  --glass-border: rgba(255, 255, 255, 0.25);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.32);
   --glass-shadow: 0 8px 32px 0 rgba(11, 59, 96, 0.18);
 }
 
@@ -73,10 +73,10 @@
 
 .App-card {
   background: var(--glass-bg);
-  color: var(--alltec-blue);
+  color: #0B3B60;
   border-radius: 22px;
   box-shadow: var(--glass-shadow);
-  padding: 36px 30px 28px 30px;
+  padding: 40px 32px 32px 32px;
   min-width: 280px;
   max-width: 370px;
   text-align: left;
@@ -95,7 +95,7 @@
 .App-card:hover {
   box-shadow: 0 16px 48px 0 rgba(11, 59, 96, 0.32);
   transform: translateY(-4px) scale(1.04);
-  background: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.88);
 }
 
 .glass {
@@ -106,7 +106,7 @@
 }
 
 .App-card-title {
-  color: var(--alltec-blue);
+  color: #0B3B60;
   font-size: 1.35rem;
   font-weight: 700;
   margin: 0 0 10px 0;
@@ -122,9 +122,11 @@
 
 .App-card-desc {
   color: #1a2233;
-  font-size: 1.05rem;
-  opacity: 0.92;
+  font-size: 1.08rem;
+  opacity: 1;
   margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 @media (max-width: 600px) {

@@ -9,6 +9,12 @@ const projects = [
     url: 'https://jdubsx.github.io/polygon-geo-center-calc/',
     emoji: '🌍',
   },
+  {
+    name: 'Alltec Out of Office',
+    description: 'A simple web app to manage and view out-of-office statuses for your team. Stay up to date on who is available and when.',
+    url: 'https://alltec-ooo.deno.dev/',
+    emoji: '🏝️',
+  },
   // Add more projects here
 ];
 
@@ -17,7 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="Company-logo" alt="Alltec Logo" />
-        <p className="App-desc">Your company's suite of helpful tools and apps.</p>
+        <p className="App-desc">Alltec suite of helpful tools and apps.</p>
         <div className="App-apps">
           {projects.map((project) => (
             <div className="App-card glass" key={project.name}>
