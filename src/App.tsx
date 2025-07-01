@@ -41,7 +41,7 @@ function App() {
         </div>
       </header>
       <footer className="App-footer">
-        Built with <span style={{color: '#e25555', fontWeight: 700}}>&lt;3</span> by Jacob
+        Built with <span style={{color: '#e25555', fontWeight: 700}}>❤️</span> by Jacob
       </footer>
     </div>
   );

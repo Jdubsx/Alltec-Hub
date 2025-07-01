@@ -165,9 +165,11 @@
   width: 100%;
   text-align: center;
   margin-top: 48px;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   font-size: 1.1rem;
-  color: #0B3B60;
-  opacity: 0.85;
+  color: var(--alltec-yellow);
+  opacity: 1;
   letter-spacing: 0.5px;
+  background: transparent;
+  box-shadow: none;
 }
