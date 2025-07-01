@@ -4,7 +4,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import * as pdfjsLib from 'pdfjs-dist/build/pdf';
 import 'pdfjs-dist/web/pdf_viewer.css';
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = process.env.PUBLIC_URL + '/pdf.worker.min.js';
 
 const projects = [
   {
@@ -25,6 +25,8 @@ const projects = [
 const pdfFiles = [
   { name: 'NFPA77.pdf', path: '/Alltec-Hub/pdfs/nfpa77.pdf' },
   { name: 'LPI175.pdf', path: '/Alltec-Hub/pdfs/lpi175.pdf' },
+  { name: 'NFPA780.pdf', path: '/Alltec-Hub/pdfs/nfpa780.pdf' },
+  { name: 'UL96.pdf', path: '/Alltec-Hub/pdfs/ul96.pdf' },
   // Add more PDFs here as needed
 ];
 
