@@ -23,24 +23,37 @@ const projects = [
 ];
 
 const pdfFiles = [
-  { name: 'NFPA77.pdf', path: '/pdfs/nfpa77.pdf' },
-  { name: 'LPI175.pdf', path: '/pdfs/lpi175.pdf' },
+  { name: 'NFPA77.pdf', path: '/Alltec-Hub/pdfs/nfpa77.pdf' },
+  { name: 'LPI175.pdf', path: '/Alltec-Hub/pdfs/lpi175.pdf' },
+  // Add more PDFs here as needed
 ];
 
 function PdfThumbnail({ file, title }: { file: string; title: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const render = async () => {
-      const loadingTask = pdfjsLib.getDocument(file);
-      const pdf = await loadingTask.promise;
-      const page = await pdf.getPage(1);
-      const viewport = page.getViewport({ scale: 0.25 });
-      const canvas = canvasRef.current;
-      if (canvas) {
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        await page.render({ canvasContext: context, viewport }).promise;
+      try {
+        const loadingTask = pdfjsLib.getDocument(file);
+        const pdf = await loadingTask.promise;
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({ scale: 0.25 });
+        const canvas = canvasRef.current;
+        if (canvas) {
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+          await page.render({ canvasContext: context, viewport }).promise;
+        }
+      } catch (err) {
+        // fallback: blank canvas or error message
+        const canvas = canvasRef.current;
+        if (canvas) {
+          const context = canvas.getContext('2d');
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.font = '14px sans-serif';
+          context.fillStyle = '#888';
+          context.fillText('PDF Error', 10, 30);
+        }
       }
     };
     render();
