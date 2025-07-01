@@ -17,20 +17,21 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="Company-logo" alt="Alltec Logo" />
-        <h1 className="App-title">Alltec Hub</h1>
+        <p className="App-desc">Your company's suite of helpful tools and apps.</p>
         <div className="App-apps">
           {projects.map((project) => (
-            <a
-              className="App-card glass"
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={project.name}
-            >
-              <span style={{ fontSize: '2rem' }}>{project.emoji}</span>
-              <h2>{project.name}</h2>
-              <p>{project.description}</p>
-            </a>
+            <div className="App-card glass" key={project.name}>
+              <span style={{ fontSize: '2rem', display: 'block', marginBottom: 8 }}>{project.emoji}</span>
+              <a
+                className="App-card-title"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.name}
+              </a>
+              <p className="App-card-desc">{project.description}</p>
+            </div>
           ))}
         </div>
       </header>
