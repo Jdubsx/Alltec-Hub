@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Alltec-Hub/static/css/main.3741557e.css",
-    "main.js": "/Alltec-Hub/static/js/main.2915d6d4.js",
+    "main.css": "/Alltec-Hub/static/css/main.6849572e.css",
+    "main.js": "/Alltec-Hub/static/js/main.594d0995.js",
     "static/js/584.af039900.chunk.js": "/Alltec-Hub/static/js/584.af039900.chunk.js",
     "service-worker.js": "/Alltec-Hub/service-worker.js",
     "static/media/logo.png": "/Alltec-Hub/static/media/logo.713b4ab9de4ed8d78d21.png",
     "index.html": "/Alltec-Hub/index.html",
-    "main.3741557e.css.map": "/Alltec-Hub/static/css/main.3741557e.css.map",
-    "main.2915d6d4.js.map": "/Alltec-Hub/static/js/main.2915d6d4.js.map",
+    "main.6849572e.css.map": "/Alltec-Hub/static/css/main.6849572e.css.map",
+    "main.594d0995.js.map": "/Alltec-Hub/static/js/main.594d0995.js.map",
     "584.af039900.chunk.js.map": "/Alltec-Hub/static/js/584.af039900.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3741557e.css",
-    "static/js/main.2915d6d4.js"
+    "static/css/main.6849572e.css",
+    "static/js/main.594d0995.js"
   ]
 }
