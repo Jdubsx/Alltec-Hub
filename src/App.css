@@ -139,3 +139,14 @@
     max-width: 90vw;
   }
 }
+
+.App-footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  color: #0B3B60;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}

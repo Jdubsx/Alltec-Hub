@@ -26,21 +26,23 @@ function App() {
         <p className="App-desc">Alltec suite of helpful tools and apps.</p>
         <div className="App-apps">
           {projects.map((project) => (
-            <div className="App-card glass" key={project.name}>
+            <a
+              className="App-card glass"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.name}
+            >
               <span style={{ fontSize: '2rem', display: 'block', marginBottom: 8 }}>{project.emoji}</span>
-              <a
-                className="App-card-title"
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {project.name}
-              </a>
+              <span className="App-card-title">{project.name}</span>
               <p className="App-card-desc">{project.description}</p>
-            </div>
+            </a>
           ))}
         </div>
       </header>
+      <footer className="App-footer">
+        Built with <span style={{color: '#e25555', fontWeight: 700}}>&lt;3</span> by Jacob
+      </footer>
     </div>
   );
 }
