@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="Company-logo" alt="Alltec Logo" />
-        <p className="App-desc">Alltec suite of helpful tools and apps.</p>
+        <p className="App-desc">A suite of helpful tools and apps.</p>
         <div className="App-apps">
           {projects.map((project) => (
             <a

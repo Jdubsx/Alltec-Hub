@@ -130,13 +130,34 @@
 }
 
 @media (max-width: 600px) {
+  .App-header {
+    font-size: 1rem;
+    padding: 0 4vw;
+  }
+  .Company-logo {
+    height: 80px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+  .App-desc {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
   .App-apps {
     flex-direction: column;
     gap: 16px;
+    margin-top: 16px;
   }
   .App-card {
     min-width: unset;
-    max-width: 90vw;
+    max-width: 98vw;
+    padding: 28px 10px 20px 10px;
+    font-size: 0.98rem;
+  }
+  .App-footer {
+    font-size: 0.98rem;
+    margin-top: 32px;
+    margin-bottom: 12px;
   }
 }
 
