@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Alltec-Hub/static/css/main.4e569397.css",
+    "main.js": "/Alltec-Hub/static/js/main.d3444e00.js",
+    "static/js/584.af039900.chunk.js": "/Alltec-Hub/static/js/584.af039900.chunk.js",
+    "service-worker.js": "/Alltec-Hub/service-worker.js",
+    "static/media/logo.png": "/Alltec-Hub/static/media/logo.d341acd1966d252f4cc8.png",
+    "index.html": "/Alltec-Hub/index.html",
+    "main.4e569397.css.map": "/Alltec-Hub/static/css/main.4e569397.css.map",
+    "main.d3444e00.js.map": "/Alltec-Hub/static/js/main.d3444e00.js.map",
+    "584.af039900.chunk.js.map": "/Alltec-Hub/static/js/584.af039900.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e569397.css",
+    "static/js/main.d3444e00.js"
+  ]
+}
