@@ -65,68 +65,146 @@
 
 .App-apps {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 32px;
 }
 
 .App-card {
-  background: var(--glass-bg);
-  color: #0B3B60;
-  border-radius: 22px;
-  box-shadow: var(--glass-shadow);
-  padding: 40px 32px 32px 32px;
-  min-width: 280px;
-  max-width: 370px;
+  background: linear-gradient(135deg, rgba(11,59,96,0.92) 70%, rgba(11,59,96,0.82) 100%);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px 0 rgba(11, 59, 96, 0.18);
+  padding: 0 0 28px 0;
+  min-width: 220px;
+  max-width: 320px;
   text-align: left;
-  border: 1.5px solid var(--glass-border);
+  border: 1.5px solid rgba(255,255,255,0.10);
   transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
+  margin-bottom: 24px;
 }
 
 .App-card:hover {
-  box-shadow: 0 16px 48px 0 rgba(11, 59, 96, 0.32);
-  transform: translateY(-4px) scale(1.04);
-  background: rgba(255,255,255,0.88);
+  transform: scale(1.04);
+  box-shadow: 0 12px 40px 0 rgba(11, 59, 96, 0.28);
+  background: linear-gradient(135deg, rgba(11,59,96,0.98) 70%, rgba(11,59,96,0.90) 100%);
 }
 
-.glass {
-  background: var(--glass-bg);
-  border: 1.5px solid var(--glass-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.App-card::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 48%;
+  background: linear-gradient(to top, rgba(254,208,63,0.18) 80%, rgba(254,208,63,0.01) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.App-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  font-size: 2.6rem;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1.5px solid rgba(255,255,255,0.10);
+  border-radius: 20px 20px 0 0;
+  margin-bottom: 0;
+}
+
+.App-card-title,
+.App-card-desc {
+  position: relative;
+  z-index: 2;
 }
 
 .App-card-title {
-  color: #0B3B60;
-  font-size: 1.35rem;
+  color: var(--alltec-yellow) !important;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 10px 0;
+  margin: 24px 0 8px 0;
   text-decoration: none;
-  transition: color 0.2s;
-  display: inline-block;
-}
-
-.App-card-title:hover {
-  color: var(--alltec-yellow);
-  text-decoration: underline;
+  transition: none;
+  display: block;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding: 0 24px;
 }
 
 .App-card-desc {
-  color: #1a2233;
-  font-size: 1.08rem;
+  color: #e6e6e6;
+  font-size: 1.05rem;
   opacity: 1;
   margin: 0;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: none;
+  padding: 0 24px;
+  text-align: left;
+}
+
+.App-card a,
+.App-card a:visited,
+.App-card a:active,
+.App-card a:hover,
+.App-card-desc a,
+.App-card-desc a:visited,
+.App-card-desc a:active,
+.App-card-desc a:hover {
+  color: #e6e6e6 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.Pdf-thumb-canvas {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0002;
+  background: #fff;
+  max-height: 160px;
+  max-width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.Pdf-loading, .Pdf-error {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #0B3B60;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .App-apps {
+    gap: 12px;
+  }
+  .App-card {
+    min-width: 160px;
+    max-width: 98vw;
+    padding: 0 0 18px 0;
+  }
+  .App-card-title, .App-card-desc {
+    padding: 0 10px;
+  }
+  .Pdf-thumb-canvas {
+    max-height: 110px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -145,14 +223,19 @@
   }
   .App-apps {
     flex-direction: column;
-    gap: 16px;
-    margin-top: 16px;
+    gap: 10px;
+    margin-top: 10px;
   }
   .App-card {
     min-width: unset;
     max-width: 98vw;
-    padding: 28px 10px 20px 10px;
-    font-size: 0.98rem;
+    padding: 0 0 10px 0;
+  }
+  .App-card-title, .App-card-desc {
+    padding: 0 4vw;
+  }
+  .Pdf-thumb-canvas {
+    max-height: 80px;
   }
   .App-footer {
     font-size: 0.98rem;
