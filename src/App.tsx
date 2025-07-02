@@ -95,10 +95,19 @@ function TechnicalReferencesPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="App-card glass"
-                style={{ maxWidth: 220, alignItems: 'center', textAlign: 'center', padding: 16 }}
+                style={{ 
+                  maxWidth: 220, 
+                  minHeight: 200,
+                  display: 'flex',
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  textAlign: 'center', 
+                  padding: 24 
+                }}
               >
-                <PdfThumbnail file={pdf.path} title={pdf.name} />
-                <span className="App-card-title" style={{ marginTop: 12, fontSize: '1.1rem' }}>{pdf.name.replace('.pdf', '')}</span>
+                <span className="App-card-title" style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700 }}>
+                  {pdf.name.replace('.pdf', '')}
+                </span>
               </a>
             ))}
           </div>
