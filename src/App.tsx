@@ -1,10 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import logo from './assets/logo.png';
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
-import * as pdfjsLib from 'pdfjs-dist/build/pdf';
-import 'pdfjs-dist/web/pdf_viewer.css';
-pdfjsLib.GlobalWorkerOptions.workerSrc = process.env.PUBLIC_URL + '/pdf.worker.min.js';
 
 const projects = [
   {
@@ -30,40 +27,6 @@ const pdfFiles = [
   // Add more PDFs here as needed
 ];
 
-function PdfThumbnail({ file, title }: { file: string; title: string }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  useEffect(() => {
-    let isMounted = true;
-    const render = async () => {
-      try {
-        const loadingTask = pdfjsLib.getDocument(file);
-        const pdf = await loadingTask.promise;
-        const page = await pdf.getPage(1);
-        const desiredHeight = 180;
-        const viewport = page.getViewport({ scale: 1 });
-        const scale = desiredHeight / viewport.height;
-        const scaledViewport = page.getViewport({ scale });
-        const canvas = canvasRef.current;
-        if (canvas && isMounted) {
-          const context = canvas.getContext('2d');
-          canvas.height = scaledViewport.height;
-          canvas.width = scaledViewport.width;
-          await page.render({ canvasContext: context, viewport: scaledViewport }).promise;
-          setLoading(false);
-        }
-      } catch (err) {
-        setError(true);
-      }
-    };
-    render();
-    return () => { isMounted = false; };
-  }, [file]);
-  if (loading) return <div className="Pdf-loading">Loading...</div>;
-  if (error) return <div className="Pdf-error">PDF Error</div>;
-  return <canvas ref={canvasRef} title={title} className="Pdf-thumb-canvas" />;
-}
 
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
   constructor(props: any) {
