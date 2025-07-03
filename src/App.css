@@ -115,7 +115,7 @@
 }
 
 .App-card {
-  background: linear-gradient(135deg, rgba(11,59,96,0.92) 70%, rgba(11,59,96,0.82) 100%);
+  background: var(--alltec-yellow);
   color: #fff;
   border-radius: 20px;
   box-shadow: 0 6px 32px 0 rgba(11, 59, 96, 0.18);
@@ -139,18 +139,10 @@
 .App-card:hover {
   transform: scale(1.04);
   box-shadow: 0 12px 40px 0 rgba(11, 59, 96, 0.28);
-  background: linear-gradient(135deg, rgba(11,59,96,0.98) 70%, rgba(11,59,96,0.90) 100%);
+  background: #FFD700; /* Slightly brighter yellow on hover */
 }
 
-.App-card::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 48%;
-  background: linear-gradient(to top, rgba(254,208,63,0.18) 80%, rgba(254,208,63,0.01) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
+/* Remove the yellow gradient overlay since whole card is now yellow */
 
 .App-card-icon {
   display: flex;
@@ -158,8 +150,8 @@
   justify-content: center;
   height: 90px;
   font-size: 2.6rem;
-  background: rgba(255,255,255,0.04);
-  border-bottom: 1.5px solid rgba(255,255,255,0.10);
+  background: var(--alltec-blue);
+  border-bottom: 1.5px solid rgba(0,0,0,0.1);
   border-radius: 20px 20px 0 0;
   margin-bottom: 0;
 }
@@ -171,7 +163,7 @@
 }
 
 .App-card-title {
-  color: var(--alltec-yellow) !important;
+  color: var(--alltec-blue) !important;
   font-size: 1.25rem;
   font-weight: 700;
   margin: 24px 0 8px 0;
@@ -184,7 +176,7 @@
 }
 
 .App-card-desc {
-  color: #e6e6e6;
+  color: #2c2c2c;
   font-size: 1.05rem;
   opacity: 1;
   margin: 0;
@@ -203,7 +195,7 @@
 .App-card-desc a:visited,
 .App-card-desc a:active,
 .App-card-desc a:hover {
-  color: #e6e6e6 !important;
+  color: #2c2c2c !important;
   text-decoration: none !important;
   font-weight: 500 !important;
   background: none !important;
