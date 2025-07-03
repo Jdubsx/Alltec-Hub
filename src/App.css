@@ -115,7 +115,7 @@
 }
 
 .App-card {
-  background: var(--alltec-yellow);
+  background: rgba(254, 208, 63, 0.85);
   color: #fff;
   border-radius: 20px;
   box-shadow: 0 6px 32px 0 rgba(11, 59, 96, 0.18);
@@ -139,7 +139,7 @@
 .App-card:hover {
   transform: scale(1.04);
   box-shadow: 0 12px 40px 0 rgba(11, 59, 96, 0.28);
-  background: #FFD700; /* Slightly brighter yellow on hover */
+  background: rgba(254, 208, 63, 0.95); /* Slightly more opaque on hover */
 }
 
 /* Remove the yellow gradient overlay since whole card is now yellow */
