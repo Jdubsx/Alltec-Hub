@@ -48,7 +48,10 @@ function TechnicalReferencesPage() {
     <ErrorBoundary>
       <div className="App App-technical-references">
         <header className="App-header">
-          <img src={logo} className="Company-logo" alt="Alltec Logo" />
+          <div className="Logo-container">
+            <img src={logo} className="Company-logo" alt="Alltec Logo" />
+            <div className="Logo-underline"></div>
+          </div>
           <p className="App-desc">Technical References</p>
           <div className="App-apps" style={{ flexWrap: 'wrap', justifyContent: 'center' }}>
             {pdfFiles.map(pdf => (
@@ -89,8 +92,11 @@ function App() {
         element={
           <div className="App">
             <header className="App-header">
-              <img src={logo} className="Company-logo" alt="Alltec Logo" />
-              <p className="App-desc">A suite of helpful tools and apps.</p>
+              <div className="Logo-container">
+                <img src={logo} className="Company-logo" alt="Alltec Logo" />
+                <div className="Logo-underline"></div>
+              </div>
+              <p className="App-desc">A suite of helpful tools and apps</p>
               <div className="App-apps">
                 {projects.map((project) => (
                   <div
