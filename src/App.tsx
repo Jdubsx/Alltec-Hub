@@ -16,6 +16,12 @@ const projects = [
     url: 'https://alltec-ooo.deno.dev/',
     emoji: '🏝️',
   },
+  {
+    name: 'Equivalent Rectangle Calculator',
+    description: 'Calculate the equivalent rectangle for your grounding system designs. Input dimensions and get precise calculations for effective grounding configurations.',
+    url: 'https://jdubsx.github.io/Equivalent-recangle-calc/',
+    emoji: '🟩',
+  },
   // Add more projects here
 ];
 
