@@ -22,6 +22,12 @@ const projects = [
     url: 'https://jdubsx.github.io/Equivalent-recangle-calc/',
     emoji: '🟩',
   },
+  {
+    name: 'SPD Wizard',
+    description: 'Find the perfect surge protection device for your electrical system. Interactive tool to help customers select the correct Alltec SPD for their specific project requirements.',
+    url: 'https://jdubsx.github.io/SPD-Wizard/',
+    emoji: '⚡',
+  },
   // Add more projects here
 ];
 
